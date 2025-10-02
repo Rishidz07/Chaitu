@@ -20,33 +20,39 @@
     }
     #wrap {
       text-align: center;
+      position: relative;
+      z-index: 1;
     }
     #code {
       font-size: 1.1em;
       line-height: 1.6;
       padding: 10px;
-    }
-    .image-gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      margin: 20px 0;
-    }
-    .birthday-img {
-      max-width: 90%;
-      width: 300px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-    canvas {
-      width: 100% !important;
-      height: auto !important;
+      color: #00bfff;
+      font-weight: bold;
     }
     #clock-box {
       margin: 20px 0;
       font-size: 1.2em;
       font-weight: bold;
+    }
+    canvas {
+      width: 100% !important;
+      height: auto !important;
+      z-index: 2;
+      position: relative;
+    }
+    .background-art {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('img.png'), url('img2.png');
+      background-repeat: no-repeat;
+      background-position: left bottom, right bottom;
+      background-size: 40% auto, 40% auto;
+      z-index: 0;
+      opacity: 0.9;
     }
   </style>
   <script src="jquery.min.js"></script>
@@ -65,22 +71,15 @@
       <source src="aud.mp3" type="audio/mp3" />
     </audio>
 
+    <div class="background-art"></div>
+
     <div id="wrap">
       <div id="text">
         <div id="code">
-          <span class="say">Happy Birthday Chaitu 💞</span><br />
-          <span class="say">You are the reason behind my smile 🎈</span><br />
-          <span class="say">May your day be filled with joy & blessings 🍀</span><br />
-          <span class="say">You make my world more beautiful every day 💕</span><br />
+          <span class="say">Beautiful every day 💕</span><br />
           <span class="say">I'm so grateful to have you in my life ❤️</span><br />
           <span class="say">And I will always love u 🥺 ❤️</span><br />
           <span class="say">Hope u have a great day today ❤️😘</span><br /><br />
-
-          <!-- 🎉 Image gallery -->
-          <div class="image-gallery">
-            <img src="img.png" alt="Birthday Image 1" class="birthday-img" />
-            <img src="img2.png" alt="Birthday Image 2" class="birthday-img" />
-          </div>
         </div>
       </div>
 
